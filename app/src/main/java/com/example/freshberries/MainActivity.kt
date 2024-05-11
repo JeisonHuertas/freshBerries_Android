@@ -37,6 +37,7 @@ class MainActivity : AppCompatActivity() {
 
         val btnIniciarSesion = findViewById<Button>(R.id.btnLogIn)
 
+        //Instancia de la Base de datos
         bd = Room.databaseBuilder(application, FreshBerriesBD::class.java, FreshBerriesBD.DATABASE_NAME).allowMainThreadQueries().build()
 
         //Registro Usuario Admin por defecto
@@ -48,15 +49,27 @@ class MainActivity : AppCompatActivity() {
             val usuario : String = txtUsuario.text.toString()
             val contrasena : String = txtContrasena.text.toString()
 
+
+            //Validar que los campos se encuentren editados por el usuario
             if (usuario.isNotEmpty() && contrasena.isNotEmpty()){
+
+                //Resultado de buscar el usuario ingresado en el campo de texto
                 val busqueda : Usuario = bd.usuarioDAO.buscarUsuarioPorUser(usuario)
+
+
                 if (busqueda != null){
+
+                    //validación de credeciales entre las inrgesadas y la guardada en la BD
                     if (busqueda.contrasena == contrasena){
+
+                        //Cambiar al Activity principal del usuario
                         startActivity(intent)
                         Toast.makeText(this,"Bienvenido ${usuario}", Toast.LENGTH_LONG).show()
+
                     }else{
                         Toast.makeText(this,"Los datos de ingresados son erróneos", Toast.LENGTH_SHORT).show()
                     }
+
                 }else{
                     Toast.makeText(this,"No se encontró el usuario indicado", Toast.LENGTH_SHORT).show()
                 }
