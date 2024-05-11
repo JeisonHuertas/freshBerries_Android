@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">FreshBerries</string>
+
+    //Strings para cuadros de texto editables
+    <string name="txtUsuario">Usuario</string>
+    <string name="txtContraseña">Contraseña</string>
+
+
+    //Strings para Botones
+    <string name="btnLogIn">Iniciar Sesión</string>
+</resources>
