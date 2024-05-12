@@ -65,6 +65,8 @@ class ProveedoresFragment : Fragment() {
                     if (busqueda != null){
                         val nextActivity = BuscarProveedorActivity::class.java
                         val intent = Intent(requireContext(), nextActivity)
+
+                        // Se envía el ID ingesado por el usuario a traves del intent al BuscarProveedorActivity y trabajar con este dato desde ahí
                         intent.putExtra("id", id)
                         startActivity(intent)
                     }else{

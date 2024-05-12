@@ -32,7 +32,10 @@ class BuscarProveedorActivity : AppCompatActivity() {
         var id : String? = ""
         val intent = intent
 
+        //Se valida que el dato envíado desde el ProveedoresFragmet tenga un valor con la llave id
         if (intent.hasExtra("id")){
+
+            //Se guarda el valor envíado en una variable para trabajar con ella el método de buscar en el DAO
             id = intent.getStringExtra("id")
         }
 
