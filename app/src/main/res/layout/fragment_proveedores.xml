@@ -4,4 +4,51 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.ui.proveedores.ProveedoresFragment"/>
+    tools:context=".Activities.ui.proveedores.ProveedoresFragment">
+
+    <Button
+        android:id="@+id/btnRegistrarProveedor"
+        android:layout_width="219dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="408dp"
+        android:text="@string/btnRegistrarProveedor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnBuscarProveedor"
+        android:layout_width="215dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="308dp"
+        android:text="@string/btnBuscarProveedor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnListarProveedores"
+        android:layout_width="220dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="500dp"
+        android:text="@string/btnListarProveedor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtIdProveedor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:ems="10"
+        android:hint="@string/txtIdProveedor"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
