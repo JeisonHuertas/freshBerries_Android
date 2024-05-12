@@ -6,11 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.room.Room
 import com.example.freshberries.Configuracion.FreshBerriesBD
+import com.example.freshberries.Modelo.Proveedor
 import com.example.freshberries.databinding.FragmentProveedoresBinding
 
 class ProveedoresFragment : Fragment() {
@@ -39,7 +42,10 @@ class ProveedoresFragment : Fragment() {
 
         }
 
+        val txtIdProveedor : EditText = binding.txtIdProveedor
+
         val btnRegistrarProveedor : Button = binding.btnRegistrarProveedor
+        val btnBuscarProveedor : Button = binding.btnBuscarProveedor
 
         //Instancia de la Base de datos
         bd = Room.databaseBuilder(requireContext(), FreshBerriesBD::class.java, FreshBerriesBD.DATABASE_NAME).allowMainThreadQueries().build()
@@ -48,6 +54,26 @@ class ProveedoresFragment : Fragment() {
             val nextActivity = RegistrarProveedorActivity::class.java
             val intent = Intent(requireContext(), nextActivity)
             startActivity(intent)
+        }
+
+        btnBuscarProveedor.setOnClickListener {
+            if (txtIdProveedor.text.toString().isNotEmpty()){
+                val id : String = txtIdProveedor.text.toString()
+
+                if(id != null){
+                    val busqueda : Proveedor? = bd.proveedorDAO.buscarProveedor(id.toLong())
+                    if (busqueda != null){
+                        val nextActivity = BuscarProveedorActivity::class.java
+                        val intent = Intent(requireContext(), nextActivity)
+                        intent.putExtra("id", id)
+                        startActivity(intent)
+                    }else{
+                        Toast.makeText(requireContext(), "No existe el proveedor con ID ${id}", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }else{
+                Toast.makeText(requireContext(), "Ingrese el ID del proveedor", Toast.LENGTH_SHORT).show()
+            }
         }
 
 
