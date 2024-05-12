@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.room.Room
+import com.example.freshberries.Activities.MainActivityAdministrador
 import com.example.freshberries.Configuracion.FreshBerriesBD
 import com.example.freshberries.Modelo.Usuario
 
@@ -28,7 +29,8 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        val nextActivity = MainActivity::class.java
+        //Variable que contiene el ActivityLiberado al usuario con rol de Administrador
+        val nextActivity = MainActivityAdministrador::class.java
         val intent = Intent(this, nextActivity)
 
 

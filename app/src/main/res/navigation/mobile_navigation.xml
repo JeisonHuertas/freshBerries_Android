@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    android:label="@string/menu_Clientes"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.freshberries.Activities.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_proveedores"
+        android:name="com.example.freshberries.Activities.ui.proveedores.ProveedoresFragment"
+        android:label="@string/menu_proveedores"
+        tools:layout="@layout/fragment_proveedores" />
+
+    <fragment
+        android:id="@+id/nav_clientes"
+        android:name="com.example.freshberries.Activities.ui.clientes.ClientesFragment"
+        android:label="@string/menu_Clientes"
+        tools:layout="@layout/fragment_clientes" />
+</navigation>

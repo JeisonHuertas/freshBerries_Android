@@ -6,4 +6,13 @@
     </style>
 
     <style name="Theme.FreshBerries" parent="Base.Theme.FreshBerries" />
+
+    <style name="Theme.FreshBerries.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.FreshBerries.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.FreshBerries.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
