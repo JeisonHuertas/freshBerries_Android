@@ -13,6 +13,18 @@
         android:theme="@style/Theme.FreshBerries"
         tools:targetApi="31">
         <activity
+            android:name=".Activities.ui.proveedores.ListarProveedorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.ui.clientes.ListarClienteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.ui.clientes.BuscarClienteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.ui.clientes.ActivityRegistrarCliente"
+            android:exported="false" />
+        <activity
             android:name=".Activities.ui.proveedores.BuscarProveedorActivity"
             android:exported="false" />
         <activity
