@@ -18,13 +18,13 @@
             android:icon="@mipmap/cliente"
             android:title="@string/menu_Clientes" />
         <item
-            android:id="@+id/nav_venta"
-            android:icon="@mipmap/carro"
-            android:title="@string/menu_Ventas" />
-        <item
             android:id="@+id/nav_producto"
             android:icon="@mipmap/producto"
             android:title="Producto" />
+        <item
+            android:id="@+id/nav_ventas"
+            android:icon="@mipmap/carro"
+            android:title="@string/menu_Ventas" />
 
     </group>
 

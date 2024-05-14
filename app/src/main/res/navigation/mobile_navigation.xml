@@ -23,4 +23,15 @@
         android:name="com.example.freshberries.Activities.ui.clientes.ClientesFragment"
         android:label="@string/menu_Clientes"
         tools:layout="@layout/fragment_clientes" />
+
+    <fragment
+        android:id="@+id/nav_producto"
+        android:name="com.example.freshberries.Activities.ui.producto.ProductoFragment"
+        android:label="@string/menu_Producto"
+        tools:layout="@layout/fragment_producto" />
+
+    <fragment
+        android:id="@+id/nav_ventas"
+        android:name="com.example.freshberries.Activities.ui.ventas.VentasFragment"
+        android:label="@string/menu_Ventas" />
 </navigation>
