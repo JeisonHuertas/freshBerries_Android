@@ -41,12 +41,15 @@ android {
 
 dependencies {
 
+    implementation ("com.airbnb.android:lottie:6.0.0")
+
 
     implementation("androidx.room:room-runtime:2.5.0")
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.androidx.mediarouter)
     annotationProcessor("androidx.room:room-compiler:2.5.0")
     kapt("androidx.room:room-compiler:2.5.0")
     implementation("com.airbnb.android:lottie-compose:6.4.0")
