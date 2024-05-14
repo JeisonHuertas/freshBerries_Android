@@ -21,6 +21,10 @@
             android:id="@+id/nav_venta"
             android:icon="@mipmap/carro"
             android:title="@string/menu_Ventas" />
+        <item
+            android:id="@+id/nav_producto"
+            android:icon="@mipmap/producto"
+            android:title="Producto" />
 
     </group>
 
