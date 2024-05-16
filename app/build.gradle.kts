@@ -50,6 +50,8 @@ dependencies {
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.androidx.mediarouter)
+    implementation(libs.androidx.legacy.support.v4)
+    implementation(libs.androidx.fragment.ktx)
     annotationProcessor("androidx.room:room-compiler:2.5.0")
     kapt("androidx.room:room-compiler:2.5.0")
     implementation("com.airbnb.android:lottie-compose:6.4.0")

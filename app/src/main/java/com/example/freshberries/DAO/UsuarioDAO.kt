@@ -27,4 +27,8 @@ interface UsuarioDAO {
 
     @Query("SELECT * FROM usuario WHERE usuario LIKE :usuario")
     fun buscarUsuarioPorUser(usuario: String) : Usuario
+
+
+
+
 }

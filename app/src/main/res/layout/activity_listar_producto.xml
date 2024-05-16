@@ -15,7 +15,7 @@
         android:layout_marginTop="68dp"
         android:layout_marginEnd="89dp"
         android:fontFamily="sans-serif-black"
-        android:text="Lista de Clientes"
+        android:text="Lista de Productos"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.476"
@@ -27,12 +27,13 @@
         android:layout_width="396dp"
         android:layout_height="194dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="31dp"
         android:layout_marginEnd="7dp"
         android:background="#05BA8C30"
         android:stretchColumns="*"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="144dp">
+        app:layout_constraintTop_toBottomOf="@+id/textView7">
 
 
         <TableRow
@@ -87,13 +88,14 @@
         android:layout_width="396dp"
         android:layout_height="194dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="7dp"
         android:background="#05BA8C30"
         android:stretchColumns="*"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="346dp">
+        app:layout_constraintTop_toBottomOf="@+id/tabla">
 
 
         <TableRow

@@ -12,6 +12,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.room.Room
 import com.example.freshberries.Activities.MainActivityAdministrador
+import com.example.freshberries.Activities.MainActivityEmpleados
 import com.example.freshberries.Configuracion.FreshBerriesBD
 import com.example.freshberries.Modelo.Usuario
 
@@ -40,46 +41,71 @@ class MainActivity : AppCompatActivity() {
         val btnIniciarSesion = findViewById<Button>(R.id.btnLogIn)
 
         //Instancia de la Base de datos
-        bd = Room.databaseBuilder(application, FreshBerriesBD::class.java, FreshBerriesBD.DATABASE_NAME).allowMainThreadQueries().build()
+        bd = Room.databaseBuilder(
+            application,
+            FreshBerriesBD::class.java,
+            FreshBerriesBD.DATABASE_NAME
+        ).allowMainThreadQueries().build()
 
         //Registro Usuario Admin por defecto
-        val usuario:Usuario = Usuario("Administrador","Administrador","admin123","Administradores")
+        val usuario: Usuario = Usuario("Administrador78", "Administrador78", "admin123", "Administrador")
         bd.usuarioDAO.registrarUsuario(usuario)
 
         btnIniciarSesion.setOnClickListener {
 
-            val usuario : String = txtUsuario.text.toString()
-            val contrasena : String = txtContrasena.text.toString()
+            val usuario: String = txtUsuario.text.toString()
+            val contrasena: String = txtContrasena.text.toString()
 
 
             //Validar que los campos se encuentren editados por el usuario
-            if (usuario.isNotEmpty() && contrasena.isNotEmpty()){
+            if (usuario.isNotEmpty() && contrasena.isNotEmpty()) {
 
                 //Resultado de buscar el usuario ingresado en el campo de texto
-                val busqueda : Usuario = bd.usuarioDAO.buscarUsuarioPorUser(usuario)
+                val busqueda: Usuario = bd.usuarioDAO.buscarUsuarioPorUser(usuario)
 
 
-                if (busqueda != null){
+
+                if (busqueda != null) {
 
                     //validación de credeciales entre las inrgesadas y la guardada en la BD
-                    if (busqueda.contrasena == contrasena){
+                    if (busqueda.contrasena == contrasena) {
+                        val perfil = busqueda.perfil
 
-                        //Cambiar al Activity principal del usuario
-                        startActivity(intent)
-                        Toast.makeText(this,"Bienvenido ${usuario}", Toast.LENGTH_LONG).show()
+                        if (perfil == "Administrador") {
 
-                    }else{
-                        Toast.makeText(this,"Los datos de ingresados son erróneos", Toast.LENGTH_SHORT).show()
+                            startActivity(Intent(this, MainActivityAdministrador::class.java))
+                            Toast.makeText(
+                                this,
+                                "Bienvenido Administrador ${usuario}",
+                                Toast.LENGTH_LONG
+                            ).show()
+                        } else if (perfil == "Empleado") {
+
+                            startActivity(Intent(this, MainActivityEmpleados::class.java))
+
+                            Toast.makeText(this, "Bienvenido ${usuario}", Toast.LENGTH_LONG).show()
+
+                        } else {
+                            Toast.makeText(
+                                this,
+                                "Los datos de ingresados son erróneos",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+
+                    } else {
+                        Toast.makeText(
+                            this,
+                            "No se encontró el usuario indicado",
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }
-
-                }else{
-                    Toast.makeText(this,"No se encontró el usuario indicado", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(this, "Por favor complete los campos", Toast.LENGTH_SHORT).show()
                 }
-            }else{
-                Toast.makeText(this,"Por favor complete los campos", Toast.LENGTH_SHORT).show()
+
+
             }
-
-
         }
     }
 }

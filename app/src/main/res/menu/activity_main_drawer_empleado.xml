@@ -9,10 +9,7 @@
             android:id="@+id/nav_home"
             android:icon="@mipmap/home"
             android:title="@string/menu_home" />
-        <item
-            android:id="@+id/nav_proveedores"
-            android:icon="@mipmap/proveedor"
-            android:title="@string/menu_proveedores" />
+
         <item
             android:id="@+id/nav_clientes"
             android:icon="@mipmap/cliente"
@@ -25,10 +22,7 @@
             android:id="@+id/nav_ventas"
             android:icon="@mipmap/carro"
             android:title="@string/menu_Ventas" />
-        <item
-            android:id="@+id/nav_usuarios"
-            android:icon="@mipmap/usuario"
-            android:title="Usuarios" />
+
 
 
     </group>
