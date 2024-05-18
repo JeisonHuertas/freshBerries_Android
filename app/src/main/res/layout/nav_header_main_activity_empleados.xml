@@ -26,10 +26,8 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-black"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:text="Administrador"
+        android:text="Fresh Berries"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textSize="20sp" />
-
-
 </LinearLayout>

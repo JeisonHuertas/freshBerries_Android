@@ -2,8 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mobile_navigation"
-    android:label="@string/menu_Clientes"
+    android:id="@+id/mobile_navigation3"
     app:startDestination="@+id/nav_home">
 
     <fragment
@@ -12,11 +11,7 @@
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
-    <fragment
-        android:id="@+id/nav_proveedores"
-        android:name="com.example.freshberries.Activities.ui.proveedores.ProveedoresFragment"
-        android:label="@string/menu_proveedores"
-        tools:layout="@layout/fragment_proveedores" />
+
 
     <fragment
         android:id="@+id/nav_clientes"
@@ -34,9 +29,6 @@
         android:id="@+id/nav_ventas"
         android:name="com.example.freshberries.Activities.ui.ventas.VentasFragment"
         android:label="@string/menu_Ventas" />
-    <fragment
-        android:id="@+id/nav_usuarios"
-        android:name="com.example.freshberries.Activities.ui.usuario.UsuarioFragment"
-        android:label="fragment_usuario"
-        tools:layout="@layout/fragment_usuario" />
+
+
 </navigation>
