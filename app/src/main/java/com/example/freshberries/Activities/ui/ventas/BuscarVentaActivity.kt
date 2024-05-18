@@ -3,6 +3,7 @@ package com.example.freshberries.Activities.ui.ventas
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -12,6 +13,8 @@ import com.example.freshberries.Configuracion.FreshBerriesBD
 import com.example.freshberries.Modelo.Proveedor
 import com.example.freshberries.Modelo.Venta
 import com.example.freshberries.R
+import java.text.SimpleDateFormat
+import java.util.Calendar
 import java.util.Date
 
 class BuscarVentaActivity : AppCompatActivity() {
@@ -21,6 +24,9 @@ class BuscarVentaActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_buscar_venta)
+
+
+        val simpleDateFormat = SimpleDateFormat("dd / MM / yyyy")
 
 
         val txtIdVenta = findViewById<EditText>(R.id.txtIdVenta)
@@ -48,13 +54,62 @@ class BuscarVentaActivity : AppCompatActivity() {
         if(id != null) {
             val busqueda: Venta? = bd.ventaDAO.buscarVenta(id.toLong())
             if (busqueda != null) {
+
+                val fechaString = simpleDateFormat.format(busqueda.fecha_venta)
+
                 txtIdVenta.setText(busqueda.id.toString())
-                txtFechaVenta.setText(busqueda.fecha_venta.toString())
+                txtFechaVenta.setText(fechaString)
                 txtIdCliente.setText(busqueda.cliente_id.toString())
                 txtIdEmpleado.setText(busqueda.empleado_id.toString())
                 txtTotalVenta.setText(busqueda.total.toString())
             }
         }
+
+
+        txtFechaVenta.setOnClickListener {
+            fun onDateSelected(day: Int, month: Int, year: Int) {
+
+                txtFechaVenta.setText("$day / $month / $year")
+                val calendar = Calendar.getInstance()
+                calendar.set(Calendar.YEAR, year)
+                calendar.set(Calendar.MONTH, month)
+                calendar.set(Calendar.DAY_OF_MONTH, day)
+                fechaSeleccionada = calendar.time
+
+
+            }
+            fun mostrarDatePickerDialog(){
+
+                val datePicker = DatePickerFragment { day, month, year -> onDateSelected(day, month, year) }
+                datePicker.show(supportFragmentManager, "datePicker")
+
+            }
+            mostrarDatePickerDialog()
+
+        }
+
+        btnActualizar.setOnClickListener {
+            val ventaId = txtIdVenta.text.toString().toLongOrNull()
+            val fechaVenta = fechaSeleccionada
+            val empleadoId = txtIdEmpleado.text.toString()
+            val clienteId = txtIdCliente.text.toString()
+            val totalVenta = txtTotalVenta.text.toString()
+
+
+            if (ventaId != null && empleadoId.isNotEmpty() && clienteId.isNotEmpty() && totalVenta.isNotEmpty()){
+                val venta = Venta(ventaId,fechaVenta,empleadoId.toLong(),clienteId.toLong(), totalVenta.toLong())
+                try {
+                    bd.ventaDAO.actualizarVenta(venta)
+                }catch (ex : Exception){
+                    Toast.makeText(this, "Ya existe una venta con ese ID", Toast.LENGTH_SHORT).show()
+                }
+                Toast.makeText(this, "Se actualizó la venta", Toast.LENGTH_SHORT).show()
+
+            }else{
+                Toast.makeText(this, "Campos vacíos", Toast.LENGTH_SHORT).show()
+            }
+        }
+
 
     }
 }
