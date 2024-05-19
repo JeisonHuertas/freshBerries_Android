@@ -25,6 +25,8 @@
     <string name="btnBuscarVenta">Buscar Venta</string>
     <string name="btnListarVentas">Listar Ventas</string>
     <string name="btnActualizarVenta">Actualizar Venta</string>
+    <string name="btnAddProducto">Añadir Producto</string>
+    <string name="btnFinalizar">Finalizar</string>
 
 
     <string name="title_activity_main_administrador">MainActivityAdministrador</string>

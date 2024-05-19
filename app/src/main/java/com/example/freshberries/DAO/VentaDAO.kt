@@ -16,6 +16,9 @@ interface VentaDAO {
     @Insert
     fun registrarVenta(venta: Venta)
 
+    @Query("SELECT id FROM Venta ORDER BY id DESC LIMIT 1")
+    fun obtenerUltimaVentaRegistrada() : Long
+
     @Query("SELECT * FROM venta WHERE id = :id")
     fun buscarVenta(id:Long) : Venta?
 

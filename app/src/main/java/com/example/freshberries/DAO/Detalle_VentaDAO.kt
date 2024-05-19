@@ -24,4 +24,7 @@ interface Detalle_VentaDAO {
 
     @Delete
     fun eliminarDetalle_venta(detalle_Venta:Detalle_Venta)
+
+    @Query("SELECT * FROM detalle_venta WHERE venta_id = :id")
+    fun obtenerDetalle_ventasPorIdVenta(id: Long): List<Detalle_Venta>
 }

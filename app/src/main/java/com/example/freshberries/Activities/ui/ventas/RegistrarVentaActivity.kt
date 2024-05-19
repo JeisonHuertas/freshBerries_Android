@@ -1,6 +1,7 @@
 package com.example.freshberries.Activities.ui.ventas
 
 import android.app.DatePickerDialog
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -10,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.room.Room
+import com.example.freshberries.Activities.ui.DetalleVenta.AddProductoActivity
 import com.example.freshberries.Configuracion.FreshBerriesBD
 import com.example.freshberries.Modelo.Proveedor
 import com.example.freshberries.Modelo.Venta
@@ -25,13 +27,14 @@ class RegistrarVentaActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_registrar_venta)
 
-        val txtIdVenta = findViewById<EditText>(R.id.txtIdVenta)
         val txtIdEmpleado = findViewById<EditText>(R.id.txtIdEmpleado)
         val txtIdCliente = findViewById<EditText>(R.id.txtClienteId)
         val txtTotalVenta = findViewById<EditText>(R.id.txtTotalVenta)
         val txtFechaVenta = findViewById<EditText>(R.id.txtFechaVenta)
 
         val btnRegistrar = findViewById<Button>(R.id.btnRegistrarVenta)
+        val btnAddProducto = findViewById<Button>(R.id.btnAddProducto)
+
         var fechaSeleccionada : Date = Date()
 
         //Instancia de la Base de datos
@@ -65,30 +68,35 @@ class RegistrarVentaActivity : AppCompatActivity() {
 
 
         btnRegistrar.setOnClickListener {
-            val ventaId = txtIdVenta.text.toString().toLongOrNull()
+
+        }
+
+        btnAddProducto.setOnClickListener {
+
+
             val fechaVenta = fechaSeleccionada
             val empleadoId = txtIdEmpleado.text.toString()
             val clienteId = txtIdCliente.text.toString()
             val totalVenta = txtTotalVenta.text.toString()
 
 
-            if (ventaId != null && empleadoId.isNotEmpty() && clienteId.isNotEmpty() && totalVenta.isNotEmpty()){
-                val venta = Venta(ventaId,fechaVenta,empleadoId.toLong(),clienteId.toLong(), totalVenta.toLong())
+            if (empleadoId.isNotEmpty() && clienteId.isNotEmpty() && totalVenta.isNotEmpty()){
+                val venta = Venta(fechaVenta,empleadoId.toLong(),clienteId.toLong(), totalVenta.toLong())
                 try {
                     bd.ventaDAO.registrarVenta(venta)
                 }catch (ex : Exception){
                     Toast.makeText(this, "Ya existe una venta con ese ID", Toast.LENGTH_SHORT).show()
                 }
-                Toast.makeText(this, "Se registró la venta", Toast.LENGTH_SHORT).show()
 
-                txtIdVenta.setText("")
-                txtIdCliente.setText("")
-                txtIdEmpleado.setText("")
-                txtFechaVenta.setText("")
-                txtTotalVenta.setText("")
+                val nextActivity = AddProductoActivity::class.java
+                val intent = Intent(this, nextActivity)
+                intent.putExtra("id_venta", bd.ventaDAO.obtenerUltimaVentaRegistrada().toString() )
+                startActivity(intent)
+
             }else{
                 Toast.makeText(this, "Campos vacíos", Toast.LENGTH_SHORT).show()
             }
+
         }
 
     }

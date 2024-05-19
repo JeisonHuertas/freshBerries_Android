@@ -10,7 +10,6 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.room.Room
 import com.example.freshberries.Configuracion.FreshBerriesBD
-import com.example.freshberries.Modelo.Producto
 import com.example.freshberries.Modelo.Usuario
 import com.example.freshberries.R
 
@@ -87,7 +86,7 @@ class BuscarUsuarioActivity : AppCompatActivity() {
         }
 
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.listRecycleViewProductos)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets

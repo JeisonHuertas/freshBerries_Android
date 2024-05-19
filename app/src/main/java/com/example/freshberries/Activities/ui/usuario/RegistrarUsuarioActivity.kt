@@ -69,7 +69,7 @@ class RegistrarUsuarioActivity : AppCompatActivity() {
                 Toast.makeText(this, "Campos vacíos", Toast.LENGTH_SHORT).show()
             }
         }
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.listRecycleViewProductos)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets

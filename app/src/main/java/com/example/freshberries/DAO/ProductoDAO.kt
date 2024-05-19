@@ -25,4 +25,8 @@ interface ProductoDAO {
 
     @Delete
     fun eliminarProducto(producto: Producto)
+
+    @Query("UPDATE producto SET stock = stock - :x WHERE id = :id")
+    fun actualizarStockProducto(x : Int , id : Long)
+
 }

@@ -43,7 +43,8 @@ dependencies {
 
     implementation ("com.airbnb.android:lottie:6.0.0")
 
-
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
+    implementation("androidx.cardview:cardview:1.0.0")
     implementation("androidx.room:room-runtime:2.5.0")
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)

@@ -13,6 +13,12 @@
         android:theme="@style/Theme.FreshBerries"
         tools:targetApi="31">
         <activity
+            android:name=".Activities.ui.DetalleVenta.ProductosDisponiblesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.ui.DetalleVenta.AddProductoActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activities.MainActivityEmpleados"
             android:exported="false"
             android:label="@string/title_activity_main_empleados"
