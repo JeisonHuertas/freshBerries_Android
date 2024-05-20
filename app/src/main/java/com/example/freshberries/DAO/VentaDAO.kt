@@ -27,4 +27,7 @@ interface VentaDAO {
 
     @Delete
     fun eliminarVenta(venta: Venta)
+
+    @Query("UPDATE venta SET total = :total WHERE id = :id")
+    fun actualizarTotal(total : Long, id: Long)
 }

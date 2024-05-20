@@ -27,11 +27,7 @@ class MainActivityAdministrador : AppCompatActivity() {
 
         setSupportActionBar(binding.appBarMainActivityAdministrador.toolbar)
 
-        binding.appBarMainActivityAdministrador.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null)
-                .setAnchorView(R.id.fab).show()
-        }
+
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView2
         val navController =

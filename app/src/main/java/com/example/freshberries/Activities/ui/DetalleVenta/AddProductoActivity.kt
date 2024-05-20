@@ -8,12 +8,14 @@ import android.widget.TableRow
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.room.Room
+import com.example.freshberries.Activities.ui.ventas.RegistrarVentaActivity
 import com.example.freshberries.Configuracion.FreshBerriesBD
 import com.example.freshberries.R
 
@@ -40,6 +42,8 @@ class AddProductoActivity : AppCompatActivity() {
 
 
         val btnAddProducto = findViewById<Button>(R.id.btnAnadirProducto)
+        val txtViewTotal = findViewById<TextView>(R.id.txtTotal)
+        val btnFinalizarVenta = findViewById<Button>(R.id.btnFinalizarVenta)
 
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerViewDetalles)
         val adapter = DetallesAdapter(application)
@@ -47,6 +51,9 @@ class AddProductoActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter
 
+        if (id != null) {
+            txtViewTotal.text = actualizarTotal(id.toLong()).toString()
+        }
 
         btnAddProducto.setOnClickListener {
             val nextActivity = ProductosDisponiblesActivity::class.java
@@ -54,33 +61,54 @@ class AddProductoActivity : AppCompatActivity() {
             intent.putExtra("id_venta", id)
 
             startActivity(intent)
+            finish()
         }
-    }
 
-    fun actualizarTabla(tableLayout: TableLayout){
-        var detalles = db.detalleVentaDAO.obtenerDetalle_ventasPorIdVenta(db.ventaDAO.obtenerUltimaVentaRegistrada())
+        btnFinalizarVenta.setOnClickListener {
 
-        if(detalles.isNotEmpty()) {
-            for (i in detalles){
-                val nombre = db.productoDAO.buscarProducto(i.producto_id)?.nombre
-                val cantidad = i.cantidad
-                val subTotal = i.precio_venta
+            val builder = AlertDialog.Builder(this)
+            val nextActivity = RegistrarVentaActivity::class.java
+            val intent = Intent(this, nextActivity)
+            val total = txtViewTotal.text.toString().toLong()
 
-                val tableRow = TableRow(this)
-                val txtViewNombre = TextView(this)
-                val txtViewCantidad = TextView(this)
-                val txtViewSubTotal = TextView(this)
 
-                tableRow.addView(txtViewNombre)
-                tableRow.addView(txtViewCantidad)
-                tableRow.addView(txtViewSubTotal)
+            if (db.detalleVentaDAO.obtenerDetalle_ventasPorIdVenta(db.ventaDAO.obtenerUltimaVentaRegistrada()).size > 0) {
 
-                tableLayout.addView(tableRow)
-                Toast.makeText(this, "${detalles.size}", Toast.LENGTH_SHORT).show()
+                db.ventaDAO.actualizarTotal(total,db.ventaDAO.obtenerUltimaVentaRegistrada())
+                with(builder) {
+                    setTitle("Registro Venta")
+                    setMessage("Se ha Registrado la venta exitosamente")
+                    setPositiveButton("Aceptar") { dialog, _ ->
+                        startActivity(intent)
+                        finish()
+                    }
+                    show()
+                }
+
+
+            }else{
+                with(builder) {
+                    setTitle("Error")
+                    setMessage("Por favor añada al menos un elemento a la venta")
+                    setPositiveButton("Aceptar") { dialog, _ ->
+                    }
+                    show()
+                }
             }
 
-        }else{
-            Toast.makeText(this, "No se han añadido productos", Toast.LENGTH_SHORT).show()
         }
     }
+
+    fun actualizarTotal(id_venta : Long): Long{
+
+        var TotalVenta : Long = 0
+
+        var detalles = db.detalleVentaDAO.obtenerDetalle_ventasPorIdVenta(id_venta)
+
+        for (detalle in detalles){
+            TotalVenta += detalle.precio_venta
+        }
+        return  TotalVenta
+    }
+
 }
