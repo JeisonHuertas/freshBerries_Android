@@ -47,8 +47,8 @@ class MainActivity : AppCompatActivity() {
         ).allowMainThreadQueries().build()
 
         //Registro Usuario Admin por defecto
-        val usuario: Usuario = Usuario("Administrador78", "Administrador78", "admin123", "Administrador")
-        bd.usuarioDAO.registrarUsuario(usuario)
+        //val usuario: Usuario = Usuario("Administrador78", "Administrador78", "admin123", "Administrador")
+        //bd.usuarioDAO.registrarUsuario(usuario)
 
         btnIniciarSesion.setOnClickListener {
 
@@ -95,12 +95,12 @@ class MainActivity : AppCompatActivity() {
                     } else {
                         Toast.makeText(
                             this,
-                            "No se encontró el usuario indicado",
+                            "Contraseña incorrecta",
                             Toast.LENGTH_SHORT
                         ).show()
                     }
                 } else {
-                    Toast.makeText(this, "Por favor complete los campos", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "No se encuentra el usuario ${usuario}", Toast.LENGTH_LONG).show()
                 }
 
 
