@@ -5,6 +5,7 @@
     android:id="@+id/listRecycleViewProductos"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#1d2e40"
     tools:context=".Activities.ui.proveedores.ListarProveedorActivity">
 
     <TextView
@@ -16,6 +17,7 @@
         android:layout_marginEnd="89dp"
         android:fontFamily="sans-serif-black"
         android:text="Lista de Proveedores"
+        android:textColor="#FDFBFB"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,12 +25,12 @@
 
     <TableLayout
         android:id="@+id/tabla"
-        android:layout_width="396dp"
-        android:layout_height="194dp"
+        android:layout_width="395dp"
+        android:layout_height="421dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="44dp"
         android:layout_marginEnd="7dp"
-        android:background="#05BA8C30"
+        android:background="#8f9ba7"
         android:stretchColumns="*"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

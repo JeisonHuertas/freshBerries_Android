@@ -1,10 +1,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
     android:id="@+id/listRecycleViewProductos"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F8F2F2"
+    android:background="#1d2e40"
     tools:context=".Activities.ui.clientes.ListarClienteActivity">
 
     <TextView
@@ -16,6 +17,7 @@
         android:layout_marginEnd="89dp"
         android:fontFamily="sans-serif-black"
         android:text="Lista de Clientes"
+        android:textColor="#FAF9F9"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,12 +25,12 @@
 
     <TableLayout
         android:id="@+id/tabla"
-        android:layout_width="396dp"
-        android:layout_height="194dp"
+        android:layout_width="399dp"
+        android:layout_height="398dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="38dp"
         android:layout_marginEnd="7dp"
-        android:background="#05BA8C30"
+        android:background="#8f9ba7"
         android:stretchColumns="*"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,7 +40,7 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#12D8F1"
+            android:background="#DDEAEC"
             android:textAlignment="center"
             android:visibility="visible">
 
@@ -83,21 +85,4 @@
     </TableLayout>
 
 
-
-
-
-    <Button
-        android:id="@+id/btn_regresarTablaAuto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="92dp"
-
-        android:text="Regresar"
-        app:backgroundTint="@null"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tabla"
-        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

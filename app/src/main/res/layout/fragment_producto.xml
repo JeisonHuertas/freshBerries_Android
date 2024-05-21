@@ -1,49 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@mipmap/fondofru"
     tools:context=".Activities.ui.producto.ProductoFragment">
 
     <com.airbnb.lottie.LottieAnimationView
 
         android:id="@+id/lottieAnimationView"
-        android:layout_width="275dp"
-        android:layout_height="230dp"
-        android:layout_marginTop="224dp"
+        android:layout_width="197dp"
+        android:layout_height="193dp"
+        android:layout_marginTop="124dp"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/frutas" />
 
+    <View
+        android:id="@+id/view6"
+        android:layout_width="414dp"
+        android:layout_height="0dp"
+        android:background="#FDFBFB"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
     <EditText
         android:id="@+id/txtIdProducto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="105dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="97dp"
+        android:layout_width="192dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/edittext"
         android:ems="10"
         android:hint="ID"
-        android:inputType="text"
+        android:paddingLeft="20dp"
+        android:textColor="#FAF8F8"
+        android:textColorHint="#ccc"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lottieAnimationView"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/btnRegistrar"
         android:layout_width="176dp"
+        android:background="@drawable/colorboton"
+        app:backgroundTint="@null"
         android:layout_height="48dp"
         android:layout_marginStart="141dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="84dp"
         android:layout_marginEnd="130dp"
         android:text="Registrar Producto"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintHorizontal_bias="0.638"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="413dp"
+        android:layout_height="0dp"
+        android:src="@mipmap/arc_1"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView" />
 
@@ -54,6 +79,8 @@
         android:layout_marginStart="118dp"
         android:layout_marginTop="21dp"
         android:layout_marginEnd="117dp"
+        android:background="@drawable/colorboton"
+        app:backgroundTint="@null"
         android:text="Listar Productos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -66,7 +93,9 @@
         android:layout_marginStart="180dp"
         android:layout_marginTop="47dp"
         android:layout_marginEnd="167dp"
+        android:fontFamily="@font/aclonica"
         android:text="Productos"
+        android:textColor="#FBF8F8"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -77,6 +106,8 @@
         android:layout_width="176dp"
         android:layout_height="43dp"
         android:layout_marginStart="160dp"
+        android:background="@drawable/colorboton"
+        app:backgroundTint="@null"
         android:layout_marginTop="14dp"
         android:layout_marginEnd="160dp"
         android:text="Buscar Producto"

@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@mipmap/fondofru"
     tools:context=".Activities.ui.usuario.UsuarioFragment">
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="79dp"
-        android:layout_marginEnd="120dp"
+        android:layout_marginStart="122dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="118dp"
         android:fontFamily="@font/aclonica"
         android:text="Usuarios"
+        android:textColor="#FDFBFB"
         android:textSize="35sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,22 +25,34 @@
     <com.airbnb.lottie.LottieAnimationView
 
         android:id="@+id/lottieAnimationView"
-        android:layout_width="275dp"
-        android:layout_height="230dp"
-        android:layout_marginTop="144dp"
+        android:layout_width="197dp"
+        android:layout_height="193dp"
+        android:layout_marginTop="124dp"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/usuario" />
 
+    <View
+        android:id="@+id/view3"
+        android:layout_width="415dp"
+        android:layout_height="0dp"
+        android:background="#F8F5F5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
     <Button
         android:id="@+id/btnAgregarUsuario"
         android:layout_width="176dp"
         android:layout_height="48dp"
         android:layout_marginStart="117dp"
+        android:background="@drawable/colorboton"
+        app:backgroundTint="@null"
         android:layout_marginTop="18dp"
         android:layout_marginEnd="118dp"
         android:text="Registrar usuarios"
@@ -50,20 +64,24 @@
         android:id="@+id/btnBuscarUsuarios"
         android:layout_width="176dp"
         android:layout_height="48dp"
-        android:layout_marginStart="129dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="130dp"
+        android:layout_marginStart="117dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/colorboton"
+        app:backgroundTint="@null"
+        android:layout_marginEnd="118dp"
         android:text="Buscar Usuarios"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtIdUser" />
+        app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView" />
 
     <Button
         android:id="@+id/btnListarUsuarios"
         android:layout_width="176dp"
         android:layout_height="48dp"
+        android:background="@drawable/colorboton"
+        app:backgroundTint="@null"
         android:layout_marginStart="117dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="118dp"
         android:text="Listar Usuarios"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,14 +90,32 @@
 
     <EditText
         android:id="@+id/txtIdUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="101dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="101dp"
+        android:layout_width="192dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/edittext"
         android:ems="10"
+        android:hint="ID"
+
         android:inputType="number"
+        android:paddingLeft="20dp"
+        android:textColor="#FBFBFB"
+        android:textColorHint="#ccc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toEndOf="@+id/lottieAnimationView"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="413dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="22dp"
+        android:src="@mipmap/arc_1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

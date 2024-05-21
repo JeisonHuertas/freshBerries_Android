@@ -4,27 +4,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@mipmap/fondofru"
     tools:context=".Activities.ui.proveedores.ProveedoresFragment">
+
+    <View
+        android:id="@+id/view8"
+        android:layout_width="410dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="1dp"
+        android:background="#FDFCFC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
     <Button
         android:id="@+id/btnRegistrarVenta"
         android:layout_width="219dp"
         android:layout_height="48dp"
-        android:layout_marginTop="408dp"
+        android:layout_marginTop="508dp"
+        android:background="@drawable/colorboton"
+        app:backgroundTint="@null"
         android:text="@string/btnRegistrarVenta"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.airbnb.lottie.LottieAnimationView
+
+        android:id="@+id/lottieAnimationView"
+        android:layout_width="197dp"
+        android:layout_height="193dp"
+        android:layout_marginTop="92dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.028"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/compra" />
+
 
     <Button
         android:id="@+id/btnBuscarVenta"
         android:layout_width="215dp"
         android:layout_height="48dp"
-        android:layout_marginTop="308dp"
+        android:background="@drawable/colorboton"
+        app:backgroundTint="@null"
+        android:layout_marginTop="428dp"
         android:text="@string/btnBuscarVenta"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -32,23 +61,59 @@
         android:id="@+id/btnListarVentas"
         android:layout_width="220dp"
         android:layout_height="47dp"
-        android:layout_marginTop="500dp"
+        android:layout_marginTop="592dp"
         android:text="@string/btnListarVentas"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        android:background="@drawable/colorboton"
+        app:backgroundTint="@null"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/txtIdVenta"
+        android:layout_width="201dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="87dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/edittext"
+
+        android:ems="10"
+        android:hint="ID"
+        android:inputType="number"
+        android:paddingLeft="20dp"
+        android:textColor="#FBFAFA"
+        android:textColorHint="#ccc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toEndOf="@+id/lottieAnimationView"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="413dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="22dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/arc_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView" />
+
+    <TextView
+        android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
-        android:ems="10"
-        android:hint="@string/txtIdVenta"
-        android:inputType="number"
+        android:layout_marginStart="168dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="186dp"
+        android:fontFamily="@font/aclonica"
+        android:text="Ventas"
+        android:textColor="#FBF9F9"
+        android:textSize="35dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.383"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

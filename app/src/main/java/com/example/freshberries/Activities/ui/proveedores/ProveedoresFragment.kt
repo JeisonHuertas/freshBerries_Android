@@ -46,12 +46,18 @@ class ProveedoresFragment : Fragment() {
 
         val btnRegistrarProveedor : Button = binding.btnRegistrarProveedor
         val btnBuscarProveedor : Button = binding.btnBuscarProveedor
+        val btnListarProveedor : Button = binding.btnListarProveedores
 
         //Instancia de la Base de datos
         bd = Room.databaseBuilder(requireContext(), FreshBerriesBD::class.java, FreshBerriesBD.DATABASE_NAME).allowMainThreadQueries().build()
 
         btnRegistrarProveedor.setOnClickListener {
             val nextActivity = RegistrarProveedorActivity::class.java
+            val intent = Intent(requireContext(), nextActivity)
+            startActivity(intent)
+        }
+        btnListarProveedor.setOnClickListener {
+            val nextActivity = ListarProveedorActivity::class.java
             val intent = Intent(requireContext(), nextActivity)
             startActivity(intent)
         }

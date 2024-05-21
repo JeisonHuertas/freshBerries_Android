@@ -2,4 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="spinner_text_selected">#FFFFFF</color>
+    <color name="spinner_text_unselected">#000000</color>
 </resources>

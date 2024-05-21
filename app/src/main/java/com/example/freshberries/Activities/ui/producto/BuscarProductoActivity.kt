@@ -48,9 +48,9 @@ class BuscarProductoActivity : AppCompatActivity() {
                 txtId.setText(busqueda.id.toString())
                 txtNombre.setText(busqueda.nombre)
                 txtDescripcion.setText(busqueda.descripcion)
-                txtPrecioCompra.setText(busqueda.precio_compra)
-                txtPrecioVenta.setText(busqueda.precio_venta)
-                txtStock.setText(busqueda.stock)
+                txtPrecioCompra.setText(busqueda.precio_compra.toString())
+                txtPrecioVenta.setText(busqueda.precio_venta.toString())
+                txtStock.setText(busqueda.stock.toString())
                 txtIdProveedor.setText(busqueda.proveedor_id.toString())
             }
         }

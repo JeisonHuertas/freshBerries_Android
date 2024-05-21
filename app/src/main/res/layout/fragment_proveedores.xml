@@ -4,27 +4,64 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@mipmap/fondofru"
     tools:context=".Activities.ui.proveedores.ProveedoresFragment">
+
+    <View
+        android:id="@+id/view7"
+        android:layout_width="412dp"
+        android:layout_height="469dp"
+        android:background="#FBFBFB"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
     <Button
         android:id="@+id/btnRegistrarProveedor"
         android:layout_width="219dp"
         android:layout_height="48dp"
-        android:layout_marginTop="408dp"
+        android:background="@drawable/colorboton"
+        app:backgroundTint="@null"
+        android:layout_marginTop="500dp"
         android:text="@string/btnRegistrarProveedor"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="413dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="22dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/arc_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView" />
+
+    <com.airbnb.lottie.LottieAnimationView
+
+        android:id="@+id/lottieAnimationView"
+        android:layout_width="197dp"
+        android:layout_height="193dp"
+        android:layout_marginTop="92dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.028"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/personas" />
 
     <Button
         android:id="@+id/btnBuscarProveedor"
         android:layout_width="215dp"
         android:layout_height="48dp"
-        android:layout_marginTop="308dp"
+        android:layout_marginTop="428dp"
         android:text="@string/btnBuscarProveedor"
+        android:background="@drawable/colorboton"
+        app:backgroundTint="@null"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -32,23 +69,49 @@
         android:id="@+id/btnListarProveedores"
         android:layout_width="220dp"
         android:layout_height="47dp"
-        android:layout_marginTop="500dp"
+        android:layout_marginTop="572dp"
         android:text="@string/btnListarProveedor"
+        android:background="@drawable/colorboton"
+        app:backgroundTint="@null"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/txtIdProveedor"
+        android:layout_width="201dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="81dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/edittext"
+
+        android:ems="10"
+        android:hint="ID"
+        android:inputType="number"
+        android:paddingLeft="20dp"
+        android:textColor="#F6F5F5"
+        android:textColorHint="#ccc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toEndOf="@+id/lottieAnimationView"
+        app:layout_constraintTop_toBottomOf="@+id/textView9">
+
+    </EditText>
+
+    <TextView
+        android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
-        android:ems="10"
-        android:hint="@string/txtIdProveedor"
-        android:inputType="number"
+        android:layout_marginStart="83dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="84dp"
+        android:fontFamily="@font/aclonica"
+        android:text="Proveedores"
+        android:textColor="#FAF8F8"
+        android:textSize="35dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

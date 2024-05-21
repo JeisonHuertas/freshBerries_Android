@@ -15,14 +15,14 @@ import com.example.freshberries.R
 class ListarProductoActivity : AppCompatActivity() {
     private lateinit var db: FreshBerriesBD
     private lateinit var tabla: TableLayout
-    private lateinit var tabla2: TableLayout
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_listar_producto)
 
         tabla = findViewById<TableLayout>(R.id.tabla)
-        tabla2 = findViewById<TableLayout>(R.id.tabla2)
+
 
 
         db = Room.databaseBuilder(application, FreshBerriesBD::class.java, FreshBerriesBD.DATABASE_NAME)
@@ -41,6 +41,9 @@ class ListarProductoActivity : AppCompatActivity() {
             val textViewNombre = TextView(this).apply { text = producto.nombre }
             val textViewDescripcion = TextView(this).apply { text = producto.descripcion }
             val textViewPrecioCompra = TextView(this).apply { text = producto.precio_compra.toString() }
+            val textViewPrecioVenta = TextView(this).apply { text = producto.precio_venta.toString() }
+            val textVievStock = TextView(this).apply { text = producto.stock.toString() }
+            val textViewidProveedor = TextView(this).apply { text = producto.proveedor_id.toString() }
 
 
 
@@ -48,6 +51,9 @@ class ListarProductoActivity : AppCompatActivity() {
             fila.addView(textViewNombre)
             fila.addView(textViewDescripcion)
             fila.addView(textViewPrecioCompra)
+            fila.addView(textViewPrecioVenta)
+            fila.addView(textVievStock)
+            fila.addView(textViewidProveedor)
 
 
 
@@ -62,29 +68,11 @@ class ListarProductoActivity : AppCompatActivity() {
                 insets
             }
         }
-        for (producto in clientes) {
-            val fila = TableRow(this)
-
-            val textViewPrecioVenta = TextView(this).apply { text = producto.precio_venta.toString() }
-            val textVievStock = TextView(this).apply { text = producto.stock.toString() }
-            val textViewidProveedor = TextView(this).apply { text = producto.proveedor_id.toString() }
-
-
-
-            fila.addView(textViewPrecioVenta)
-            fila.addView(textVievStock)
-            fila.addView(textViewidProveedor)
-
-
-
-
-            tabla2.addView(fila)
 
 
 
 
 
-        }
 
 
     }

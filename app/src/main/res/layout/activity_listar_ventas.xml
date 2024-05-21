@@ -4,15 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#1d2e40"
     tools:context=".Activities.ui.ventas.ListarVentasActivity">
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="27dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="36dp"
         android:text="Ventas"
+        android:textColor="#F7F8FA"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"

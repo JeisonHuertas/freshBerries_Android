@@ -5,6 +5,7 @@
     android:id="@+id/listRecycleViewProductos"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@mipmap/fondo2"
     tools:context=".Activities.ui.DetalleVenta.AddProductoActivity">
 
 
@@ -24,6 +25,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
+        android:background="@drawable/colorboton"
+        app:backgroundTint="@null"
         android:text="@string/btnAddProducto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnFinalizarVenta"
@@ -34,6 +37,8 @@
         android:id="@+id/btnFinalizarVenta"
         android:layout_width="155dp"
         android:layout_height="47dp"
+        android:background="@drawable/colorboton"
+        app:backgroundTint="@null"
         android:layout_marginBottom="40dp"
         android:text="@string/btnFinalizar"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -43,11 +48,13 @@
 
     <TextView
         android:id="@+id/txtTotal"
-        android:layout_width="170dp"
-        android:layout_height="42dp"
+        android:layout_width="226dp"
+        android:layout_height="47dp"
         android:layout_marginStart="232dp"
         android:layout_marginBottom="128dp"
+        android:background="@drawable/edittext"
         android:text="TextView"
+        android:textColor="#FBF9F9"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -59,6 +66,7 @@
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="128dp"
         android:text="Total :"
+        android:textColor="#FBF8F8"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

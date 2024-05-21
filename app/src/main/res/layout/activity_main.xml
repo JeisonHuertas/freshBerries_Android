@@ -5,6 +5,8 @@
     android:id="@+id/listRecycleViewProductos"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
+    android:background="@mipmap/fondofru"
     tools:context=".MainActivity">
 
 
@@ -12,21 +14,39 @@
         android:id="@+id/imageView"
         android:layout_width="132dp"
         android:layout_height="153dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="68dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/usuario" />
+        app:srcCompat="@mipmap/usuario1" />
+
+    <View
+        android:id="@+id/view5"
+        android:layout_width="264dp"
+        android:layout_height="266dp"
+        android:layout_marginStart="63dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="63dp"
+        android:background="@drawable/edittext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
         android:id="@+id/txtUsuario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="226dp"
+        android:layout_height="47dp"
         android:layout_marginTop="72dp"
+        android:background="@drawable/edittext"
+        android:backgroundTintMode="src_in"
         android:ems="10"
+
         android:hint="@string/txtUsuario"
         android:inputType="text"
+
+        android:paddingLeft="20dp"
+        android:textColor="#FAF8F8"
+        android:textColorHint="#ccc"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,12 +54,17 @@
 
     <EditText
         android:id="@+id/txtContraseña"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="226dp"
+        android:layout_height="47dp"
         android:layout_marginTop="56dp"
+        android:background="@drawable/edittext"
         android:ems="10"
         android:hint="@string/txtContraseña"
         android:inputType="textPassword"
+        android:paddingLeft="20dp"
+        android:textColor="#FAF6F6"
+
+        android:textColorHint="#ccc"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,12 +72,22 @@
 
     <Button
         android:id="@+id/btnLogIn"
-        android:layout_width="201dp"
-        android:layout_height="52dp"
+        android:layout_width="226dp"
+        android:layout_height="47dp"
+        android:background="@drawable/colorboton"
+        app:backgroundTint="@null"
+
         android:layout_marginBottom="164dp"
+
+        android:backgroundTint="#00FFFFFF"
+        android:backgroundTintMode="add"
         android:text="@string/btnLogIn"
+        android:textColorLink="#00FFFFFF"
+        app:iconTint="#B0421414"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view5" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

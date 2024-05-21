@@ -5,6 +5,7 @@
     android:id="@+id/listRecycleViewProductos"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#1d2e40"
     tools:context=".Activities.ui.producto.ListarProductoActivity">
 
     <TextView
@@ -16,127 +17,121 @@
         android:layout_marginEnd="89dp"
         android:fontFamily="sans-serif-black"
         android:text="Lista de Productos"
+        android:textColor="#FBFAFA"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TableLayout
-        android:id="@+id/tabla"
-        android:layout_width="396dp"
-        android:layout_height="194dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="31dp"
-        android:layout_marginEnd="7dp"
-        android:background="#05BA8C30"
-        android:stretchColumns="*"
+    <ScrollView
+        android:layout_width="405dp"
+        android:layout_height="518dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="3dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7">
 
+        <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#12D8F1"
-            android:textAlignment="center"
-            android:visibility="visible">
-
-            <TextView
-                android:id="@+id/textview_codigo"
-                android:layout_width="94dp"
-                android:layout_height="wrap_content"
-                android:background="#c0efd2"
-                android:text="Id"
+            <TableLayout
+                android:id="@+id/tabla"
+                android:layout_width="396dp"
+                android:layout_height="194dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="31dp"
+                android:layout_marginEnd="7dp"
+                android:background="#8f9ba7"
+                android:stretchColumns="*"
                 android:textAlignment="center"
-                android:textColor="#0C0C0C" />
-
-            <TextView
-                android:id="@+id/text_view_nombre"
-                android:layout_width="92dp"
-                android:layout_height="wrap_content"
-                android:background="#c0efd2"
-                android:text="Nombre"
-                android:textAlignment="center"
-                android:textColor="#131313" />
-
-            <TextView
-                android:id="@+id/text_view_telefono"
-                android:layout_width="111dp"
-                android:layout_height="wrap_content"
-                android:background="#c0efd2"
-                android:text="Descripcion"
-                android:textAlignment="center"
-                android:textColor="#171616" />
-
-            <TextView
-                android:id="@+id/text_view_telefono7"
-                android:layout_width="111dp"
-                android:layout_height="wrap_content"
-                android:background="#c0efd2"
-                android:text="Precio Compra"
-                android:textAlignment="center"
-                android:textColor="#171616" />
-        </TableRow>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView7">
 
 
-    </TableLayout>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#6C9095"
 
-    <TableLayout
-        android:id="@+id/tabla2"
-        android:layout_width="396dp"
-        android:layout_height="194dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="7dp"
-        android:background="#05BA8C30"
-        android:stretchColumns="*"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tabla">
+                    android:textAlignment="center"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/textview_codigo"
+                        android:layout_width="94dp"
+                        android:layout_height="wrap_content"
+                        android:background="#c0efd2"
+                        android:text="Id"
+                        android:textAlignment="center"
+                        android:textColor="#0C0C0C" />
+
+                    <TextView
+                        android:id="@+id/text_view_nombre"
+                        android:layout_width="92dp"
+                        android:layout_height="wrap_content"
+                        android:background="#c0efd2"
+                        android:text="Nombre"
+                        android:textAlignment="center"
+                        android:textColor="#131313" />
+
+                    <TextView
+                        android:id="@+id/text_view_telefono"
+                        android:layout_width="111dp"
+                        android:layout_height="wrap_content"
+                        android:background="#c0efd2"
+                        android:text="Descripcion"
+                        android:textAlignment="center"
+                        android:textColor="#171616" />
+
+                    <TextView
+                        android:id="@+id/text_view_telefono7"
+                        android:layout_width="111dp"
+                        android:layout_height="wrap_content"
+                        android:background="#c0efd2"
+                        android:text="Precio Compra"
+                        android:textAlignment="center"
+                        android:textColor="#171616" />
+
+                    <TextView
+                        android:id="@+id/textview_codigo23"
+                        android:layout_width="94dp"
+                        android:layout_height="wrap_content"
+                        android:background="#c0efd2"
+                        android:text="Precio Venta"
+                        android:textAlignment="center"
+                        android:textColor="#0C0C0C" />
+
+                    <TextView
+                        android:id="@+id/text_view_nombre23"
+                        android:layout_width="92dp"
+                        android:layout_height="wrap_content"
+                        android:background="#c0efd2"
+                        android:text="Stock"
+                        android:textAlignment="center"
+                        android:textColor="#131313" />
+
+                    <TextView
+                        android:id="@+id/text_view_telefono23"
+                        android:layout_width="111dp"
+                        android:layout_height="wrap_content"
+                        android:background="#c0efd2"
+                        android:text="Proveedor ID"
+                        android:textAlignment="center"
+                        android:textColor="#171616" />
+                </TableRow>
 
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#12D8F1"
-            android:textAlignment="center"
-            android:visibility="visible">
-
-            <TextView
-                android:id="@+id/textview_codigo2"
-                android:layout_width="94dp"
-                android:layout_height="wrap_content"
-                android:background="#c0efd2"
-                android:text="Precio Venta"
-                android:textAlignment="center"
-                android:textColor="#0C0C0C" />
-
-            <TextView
-                android:id="@+id/text_view_nombre2"
-                android:layout_width="92dp"
-                android:layout_height="wrap_content"
-                android:background="#c0efd2"
-                android:text="Stock"
-                android:textAlignment="center"
-                android:textColor="#131313" />
-
-            <TextView
-                android:id="@+id/text_view_telefono2"
-                android:layout_width="111dp"
-                android:layout_height="wrap_content"
-                android:background="#c0efd2"
-                android:text="Proveedor ID"
-                android:textAlignment="center"
-                android:textColor="#171616" />
+            </TableLayout>
+        </HorizontalScrollView>
 
 
-        </TableRow>
+    </ScrollView>
 
 
-    </TableLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
